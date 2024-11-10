@@ -57,7 +57,13 @@ user_input_data = pd.DataFrame({
     'Region': [region_encoded]
 })
 
+# Display the input data for debugging
+st.write(user_input_data)
+
 # Predict using the trained model
 if st.button('Predict'):
-    prediction = model.predict(user_input_data)
-    st.write(f'Predicted Mental Health Condition: {prediction[0]}')
+    try:
+        prediction = model.predict(user_input_data)
+        st.write(f'Predicted Mental Health Condition: {prediction[0]}')
+    except ValueError as e:
+        st.write(f"Error: {str(e)}")
