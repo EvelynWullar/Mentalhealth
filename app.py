@@ -2,7 +2,7 @@ import streamlit as st
 import joblib  # or import pickle if you used pickle to save your model
 
 # Load the trained model
-model = joblib.load("your_model_file_path.pkl")  # Adjust path as needed
+model = joblib.load("my_model.pkl")
 
 # Define the app interface
 st.title("My Model Prediction App")
@@ -20,3 +20,4 @@ if st.button("Predict"):
     input_data = [[input_feature1, input_feature2]]  # Add more features as needed
     prediction = model.predict(input_data)
     st.write(f"Prediction: {prediction[0]}")
+
