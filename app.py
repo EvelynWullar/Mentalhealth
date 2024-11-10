@@ -51,7 +51,7 @@ location = st.selectbox('Location', options=['Remote', 'Hybrid', 'Onsite'])
 sleep_quality = st.selectbox('Sleep Quality', options=['Good','Poor','Average'])
 stress_level = st.selectbox('Stress Level', options=['High','Medium','Low'])
 mental_health_resources = st.selectbox('Access to Mental Health Resources', options=['Yes','No'])
-physical_activity = st.selectbox('Physical Activity', options=['Daily','Weekly']
+physical_activity = st.selectbox('Physical Activity', options=['Daily','Weekly'])
 region = st.selectbox('Region', options=['Africa', 'Asia', 'North America','South America','Oceania','Europe']) 
 
 # Create a dataframe for user inputs
