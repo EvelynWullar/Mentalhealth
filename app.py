@@ -41,14 +41,6 @@ mental_health_resources_encoded = le_mental_health_resources.fit(['Yes','No']).t
 physical_activity_encoded = le_physical_activity.fit(['Daily','Weekly']).transform([physical_activity])[0]
 region_encoded = le_region.fit(['Africa', 'Asia', 'North America','South America','Oceania','Europe']).transform([region])[0]
 
-# Display the encoded values
-st.write(f"Encoded Industry: {industry_encoded}")
-st.write(f"Encoded Location: {location_encoded}")
-st.write(f"Encoded Sleep Quality: {sleep_quality_encoded}")
-st.write(f"Encoded Stress Level: {stress_level_encoded}")
-st.write(f"Encoded Mental Health Resources: {mental_health_resources_encoded}")
-st.write(f"Encoded Physical Activity: {physical_activity_encoded}")
-st.write(f"Encoded Region: {region_encoded}")
 
 # Creating the input feature vector for prediction
 user_input_data = pd.DataFrame({
