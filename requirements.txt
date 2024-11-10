@@ -1,2 +1,6 @@
 streamlit
 joblib  # or pickle if you used pickle to save your model
+scikit-learn
+numpy
+pandas
+joblib
