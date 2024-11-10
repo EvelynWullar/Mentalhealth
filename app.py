@@ -14,10 +14,9 @@ def preprocess_inputs(inputs):
     
     # Assuming `inputs` is a pandas DataFrame with correct input column names
     # Scale numerical columns
-    numeric_columns = ['Age', 'Hours_Worked_Per_Week', 'sleep_Quality', 'stress_Level', 
-                       'access_to_Mental_Health_Resource', 'physical_Activity']
+    numeric_columns = ['Age', 'Hours_Worked_Per_Week']
     
-    inputs[numeric_columns] = scaler.fit_transform(inputs[numeric_columns])  # Scale the numerical columns
+    inputs[numeric_columns] = scaler.fit_transform(inputs[numeric_columns]) 
 
     # Handle categorical data if needed, e.g., using one-hot encoding or manual encoding for 'gender', 'industry', etc.
     gender_map = {'Male': 0, 'Female': 1}
@@ -44,16 +43,16 @@ def predict_mental_health_condition(user_input):
 st.title('Mental Health Condition Prediction')
 
 # Input fields for the user
-age = st.number_input('Age', min_value=18, max_value=100, value=30)
-hours_worked = st.number_input('Hours Worked Per Week', min_value=0, max_value=168, value=40)
+age = st.number_input('Age', min_value=18, max_value=60, value=30)
+hours_worked = st.number_input('Hours Worked Per Week', min_value=20, max_value=60, value=40)
 gender = st.selectbox('Gender', options=['Male', 'Female'])
-industry = st.selectbox('Industry', options=['Industry1', 'Industry2', 'Industry3'])  # Add actual industries
-location = st.selectbox('Location', options=['Location1', 'Location2', 'Location3'])  # Add actual locations
-sleep_quality = st.number_input('Sleep Quality (1-10)', min_value=1, max_value=10, value=7)
-stress_level = st.number_input('Stress Level (1-10)', min_value=1, max_value=10, value=5)
-mental_health_resources = st.number_input('Access to Mental Health Resources (1-10)', min_value=1, max_value=10, value=6)
-physical_activity = st.number_input('Physical Activity (1-10)', min_value=1, max_value=10, value=7)
-region = st.selectbox('Region', options=['Region1', 'Region2', 'Region3'])  # Add actual regions
+industry = st.selectbox('Industry', options=['Healthcare', 'IT', 'Consulting','Manufacturing','Retail','Finance','Education']) 
+location = st.selectbox('Location', options=['Remote', 'Hybrid', 'Onsite']) 
+sleep_quality = st.selectbox('Sleep Quality', options=['Good','Poor','Average'])
+stress_level = st.selectbox('Stress Level', options=['High','Medium','Low'])
+mental_health_resources = st.selectbox('Access to Mental Health Resources', options=['Yes','No'])
+physical_activity = st.selectbox('Physical Activity', options=['Daily','Weekly']
+region = st.selectbox('Region', options=['Africa', 'Asia', 'North America','South America','Oceania','Europe']) 
 
 # Create a dataframe for user inputs
 user_input = pd.DataFrame({
